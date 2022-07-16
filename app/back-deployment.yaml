@@ -1,0 +1,18 @@
+apiVersion: app/v1
+kind: Deployment
+metadata:
+  labels:
+    io.kompose.service: back
+  name: back
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        io.kompose.service: back
+    spec:
+      containers:
+      - image: back
+        name: api
+        ports:
+        - containerPort: 3000
